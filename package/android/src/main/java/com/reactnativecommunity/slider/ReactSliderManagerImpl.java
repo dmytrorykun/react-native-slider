@@ -138,4 +138,14 @@ public class ReactSliderManagerImpl {
         return MapBuilder.of(ReactSlidingCompleteEvent.EVENT_NAME, MapBuilder.of("registrationName", "onRNCSliderSlidingComplete"),
                 ReactSlidingStartEvent.EVENT_NAME, MapBuilder.of("registrationName", "onRNCSliderSlidingStart"));
     }
+
+    public static Map getExportedCustomBubblingEventTypeConstants() {
+        return MapBuilder.of(
+            ReactSliderEvent.EVENT_NAME,
+            MapBuilder.of(
+                "phasedRegistrationNames",
+                MapBuilder.of(
+                    "bubbled", "onRNCSliderValueChange",
+                    "captured", "onRNCSliderValueChangeCapture")));
+    }
 }
